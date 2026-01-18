@@ -53,6 +53,10 @@ if [[ -e /etc/xen/domagl-ivi.cfg ]]; then
     # if DomAGL-IVI is enabled, delay booting DomAGL-IC.
     sleep 5s
 fi
+if [[ -e /etc/xen/doma.cfg ]]; then
+    # if doma is enabled, delay booting DomU.
+    sleep 5s
+fi
 
 # now make up the configuration
 echo "Mangling domain configuration: setting storage to ${BOOT_STORAGE}"
